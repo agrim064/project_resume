@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Screening Tool</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+
+        form {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        textarea, input[type="file"], button {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        textarea {
+            resize: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        input[type="file"] {
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Form Container Styling */
+        .form-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            form {
+                width: 90%;
+                padding: 15px;
+            }
+
+            textarea, input[type="file"], button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Resume Screening Tool</h1>
+    <div class="form-container">
+        <form method="POST" enctype="multipart/form-data">
+            <label for="job_description">Job Description:</label><br>
+            <textarea name="job_description" rows="5" placeholder="Paste the job description here..."></textarea><br><br>
+            
+            <label for="resumes">Upload Resumes (PDF or TXT):</label><br>
+            <input type="file" name="resumes" multiple><br><br>
+            
+            <button type="submit">Analyze Resumes</button>
+        </form>
+    </div>
+</body>
+</html>

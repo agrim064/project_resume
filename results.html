@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resume Analyzer Results</h1>
+    {% if rankings and rankings|length > 0 %}
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Filename</th>
+                <th>Similarity Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in rankings %}
+            <tr>
+                <td>{{ result.rank }}</td>
+                <td>{{ result.filename }}</td>
+                <td>{{ result.score }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p style="text-align: center; color: red;">No resumes matched or data is missing!</p>
+    {% endif %}
+</body>
+</html>
